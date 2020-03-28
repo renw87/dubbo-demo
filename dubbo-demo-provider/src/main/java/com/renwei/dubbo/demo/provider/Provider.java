@@ -9,6 +9,8 @@ public class Provider {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"dubbo-demo-provider.xml"});
         context.start();
 
+        System.out.println("Provider is start!");
+
         System.in.read(); // 按任意键退出
     }
 
