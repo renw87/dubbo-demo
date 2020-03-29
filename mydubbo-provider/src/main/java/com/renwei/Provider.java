@@ -9,9 +9,10 @@ import com.renwei.service.HelloServiceImpl;
 public class Provider {
     public static void main(String[] args) {
         HelloService helloService = new HelloServiceImpl();
-        RegistryService registryService = new ZookeeperRegistry();
+        /*RegistryService registryService = new ZookeeperRegistry();
         NettyRpcServer server = new NettyRpcServer(registryService, "127.0.0.1:8888");
         server.bind(helloService);
-        server.publisher();
+        server.publisher();*/
+        new NettyRpcServer("com.renwei", "127.0.0.1:8888");
     }
 }
