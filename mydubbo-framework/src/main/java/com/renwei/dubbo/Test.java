@@ -13,7 +13,7 @@ public class Test {
         registryService.registry(serviceName, "127.0.0.1:7788");
         String address = registryService.discover(serviceName);
         System.out.println(address);
-        System.in.read();
+        //System.in.read();
 
     }
 }
