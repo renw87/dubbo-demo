@@ -97,16 +97,18 @@ public class NettyRpcServer {
     }
 
     /**
-     * 子对象的实现
+     * 服务名称和子类对象一一对应起来
      *
      * @param services 对象实现类
      */
     public void bind(Object... services) {
         //将实现类通过注解获取实现类的名称、实现类的实现放入map集合中。
         for (Object service : services) {
+            //得到服务名称
             RpcAnnotation annotation = service.getClass().getAnnotation(RpcAnnotation.class);
             if (annotation != null) {
                 String serviceName = annotation.value().getName();
+                //客户端最终需要根据服务名称调用子类对象的实现
                 handlerMap.put(serviceName, service);
             }
         }
