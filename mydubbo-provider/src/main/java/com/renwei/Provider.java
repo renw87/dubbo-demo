@@ -14,5 +14,6 @@ public class Provider {
         server.bind(helloService);
         server.publisher();*/
         new NettyRpcServer("com.renwei", "127.0.0.1:8888");
+        new NettyRpcServer("com.renwei", "127.0.0.1:9999");
     }
 }
